@@ -1,0 +1,14 @@
+{
+  "timestamp": 1793332925,
+  "backups": [
+    {
+      "path": "\\\\?\\C:\\Users\\inzam\\RND\\treatman\\pyproject.toml",
+      "original_content": "[build-system]\nrequires = [\"setuptools>=61.0\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"treatman\"\nversion = \"0.1.0\"\ndescription = \"TM (TreatMan) - Autonomous Windows AI Agent (JARVIS-like)\"\nreadme = \"README.md\"\nrequires-python = \">=3.11\"\nauthors = [\n    { name = \"TreatMan Project\" }\n]\ndependencies = [\n    \"httpx>=0.27.0\",\n    \"rich>=13.7.0\",\n    \"pyyaml>=6.0.1\",\n    \"pydantic>=2.7.0\",\n    \"psutil>=5.9.8\",\n    \"send2trash>=1.8.3\",\n    \"ddgs>=9.16.0\",\n    \"mss>=9.0.1\",\n    \"Pillow>=10.3.0\",\n    \"edge-tts>=6.1.12\",\n    \"SpeechRecognition>=3.17.0\",\n    \"comtypes>=1.4.0\",\n    \"keyboard>=0.13.5\",\n    \"pystray>=0.19.5\",\n    \"pywebview>=6.2.0\",\n]\n\n[project.optional-dependencies]\naudio = [\n    \"pycaw>=20240210\",\n    \"screen-brightness-control>=0.23.0\",\n    \"pyaudio>=0.2.14\",\n    \"sounddevice>=0.4.6\",\n    \"faster-whisper>=1.0.2\",\n    \"openwakeword>=0.6.0\",\n]\ngui = [\n    \"pyautogui>=0.9.54\",\n    \"pywinauto>=0.6.8\",\n    \"pystray>=0.19.5\",\n    \"keyboard>=0.13.5\",\n]\ndev = [\n    \"pytest>=8.1.0\",\n    \"pytest-asyncio>=0.23.0\",\n]\n\n[project.scripts]\ntm = \"run_tm:main\"\n\n[tool.setuptools.packages.find]\nwhere = [\".\"]\ninclude = [\"tm*\"]\n\n"
+    }
+  ],
+  "descriptions": [
+    "Add webview to pyproject.toml",
+    "Add duckduckgo-search to pyproject.toml",
+    "Add speech-recognition to pyproject.toml"
+  ]
+}

@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "treatman"
+version = "0.1.0"
+description = "TM (TreatMan) - Autonomous Windows AI Agent (JARVIS-like)"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "TreatMan Project" }
+]
+dependencies = [
+    "httpx>=0.27.0",
+    "rich>=13.7.0",
+    "pyyaml>=6.0.1",
+    "psutil>=5.9.8",
+    "send2trash>=1.8.3",
+    "ddgs>=9.16.0",
+    "mss>=9.0.1",
+    "Pillow>=10.3.0",
+    "edge-tts>=6.1.12",
+    "comtypes>=1.4.0",
+    "keyboard>=0.13.5",
+    "pystray>=0.19.5",
+    "pywebview>=5.0.0",
+    "SpeechRecognition>=3.14.0",
+]
+
+[project.optional-dependencies]
+audio = [
+    "pycaw>=20240210",
+    "screen-brightness-control>=0.23.0",
+    "pyaudio>=0.2.14",
+    "sounddevice>=0.4.6",
+    "faster-whisper>=1.0.2",
+    "openwakeword>=0.6.0",
+]
+gui = [
+    "pyautogui>=0.9.54",
+    "pywinauto>=0.6.8",
+    "pystray>=0.19.5",
+    "keyboard>=0.13.5",
+]
+dev = [
+    "pytest>=8.1.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[project.scripts]
+tm = "run_tm:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tm*"]
+
+[tool.stackvet]
+min_score = 80
+fail_on = "error"
+
+[tool.stackvet.rules]
+IMP-003 = "off"
+DEP-002 = "off"
+DEP-003 = "off"
+
+

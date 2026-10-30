@@ -1,0 +1,66 @@
+name: StackVet Health & Security Audit
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  audit:
+    name: StackVet Project Health & Security
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install StackVet
+        run: |
+          python -m pip install --upgrade pip
+          pip install stackvet
+
+      - name: Run StackVet Doctor
+        run: |
+          echo "### StackVet Universal Project Health Report" >> $GITHUB_STEP_SUMMARY
+          echo '```text' >> $GITHUB_STEP_SUMMARY
+          stackvet doctor >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: Run CI Gate Check
+        run: |
+          stackvet check --strict
+
+      - name: Generate Security SARIF Report
+        if: always()
+        run: |
+          stackvet --format sarif doctor > stackvet.sarif
+
+      - name: Upload SARIF to GitHub Security Tab
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        continue-on-error: true
+        with:
+          sarif_file: stackvet.sarif
+          category: stackvet
+
+      - name: Generate HTML Diagnostic Report
+        if: always()
+        run: |
+          stackvet --format html doctor > stackvet-report.html
+
+      - name: Upload HTML Health Report Artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stackvet-health-report
+          path: stackvet-report.html
+          retention-days: 14

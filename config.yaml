@@ -1,0 +1,96 @@
+# ==============================================================================
+# TM (TreatMan) Configuration File
+# ==============================================================================
+
+agent:
+  name: "TM"
+  user_title: "Sir"
+  persona_style: "jarvis"
+  max_react_turns: 10
+
+autonomy:
+  level: "balanced" # Options: "strict" | "balanced" | "autonomous"
+  
+  rules:
+    allow_app_launch: true
+    allow_app_close: true
+    allow_system_volume_brightness: true
+    allow_web_browsing: true
+    allow_file_reading: true
+    allow_file_writing: true
+    require_confirmation_for_file_delete: true
+    require_confirmation_for_shell_execution: false
+    require_confirmation_for_process_kill: true
+    require_confirmation_for_system_power: true
+
+  forbidden_commands:
+    - "format "
+    - "rmdir /s /q c:\\"
+    - "Remove-Item -Recurse -Force C:\\"
+    - "del /f /s /q c:\\"
+    - "diskpart"
+    - "bcdedit"
+    - "Drop-Database"
+    - "TRUNCATE TABLE"
+    - "Stop-Computer"
+
+llm:
+  provider: "auto" # Options: "auto" (tries OmniRoute -> OpenRouter -> Ollama) | "omniroute" | "openrouter" | "ollama"
+  temperature: 0.2
+
+  # OmniRoute AI Gateway (https://www.omniroute.online/)
+  omniroute:
+    enabled: true
+    base_url: "http://localhost:20128/v1" # Local OmniRoute gateway or custom hosted URL
+    model: "auto"                          # "auto" or specific model in your OmniRoute pool
+  
+  # Ranked free-tier models on OpenRouter
+  free_models:
+    - "meta-llama/llama-3.3-70b-instruct:free"
+    - "google/gemini-2.0-flash-exp:free"
+    - "deepseek/deepseek-r1:free"
+    - "qwen/qwen-2.5-coder-32b-instruct:free"
+    - "mistralai/mistral-7b-instruct:free"
+
+  ollama:
+    enabled: true
+    endpoint: "http://localhost:11434"
+    model: "llama3.2:latest"
+
+voice:
+  enabled: true
+  wake_word: "hey tm"
+  speech_to_text:
+    engine: "whisper"
+    model_size: "base.en"
+    device: "auto"
+    silence_threshold_seconds: 1.2
+  
+  text_to_speech:
+    engine: "edge-tts"
+    voice: "en-GB-RyanNeural"
+    rate: "+0%"
+    pitch: "+0Hz"
+    barge_in: true
+
+vision:
+  enabled: true
+  capture_active_window_only: false
+  max_resolution: [1280, 720]
+  jpeg_quality: 80
+
+interfaces:
+  default_mode: "cli"
+  hotkeys:
+    summon_agent: "ctrl+space"
+    push_to_talk: "win+shift+t"
+    stop_speaking: "escape"
+  hud:
+    theme: "cyberpunk_dark"
+    opacity: 0.92
+    position: "bottom-right"
+
+paths:
+  data_dir: "~/.treatman"
+  recycle_bin_safety: true
+

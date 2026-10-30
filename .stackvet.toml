@@ -1,0 +1,18 @@
+# StackVet Project Configuration
+# Reference: https://inzamol.github.io/stackvet/configuration/
+
+[project]
+name = "treatman"
+min_score = 80
+strict = false
+
+[thresholds]
+fail_on = "error"
+min_score = 80
+
+[rules]
+# In TreatMan, tool plugins and CLI interfaces are invoked dynamically / via entrypoints
+IMP-003 = "off"
+# Package naming aliases (pywebview -> webview, SpeechRecognition -> speech_recognition, ddgs)
+DEP-002 = "off"
+DEP-003 = "off"

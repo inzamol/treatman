@@ -1,0 +1,1586 @@
+{
+  "schema_version": "1.0.0",
+  "source": "osv.dev",
+  "last_updated": 1793334919,
+  "ttl_seconds": 604800,
+  "entries": [
+    {
+      "package": "pyobjc-framework-contacts",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "colorama",
+      "ecosystem": "PyPI",
+      "version": "0.4.6",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-corewlan",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-metalperformanceshaders",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "proxy-tools",
+      "ecosystem": "PyPI",
+      "version": "0.1.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyyaml",
+      "ecosystem": "PyPI",
+      "version": "6.0.3",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyscreeze",
+      "ecosystem": "PyPI",
+      "version": "1.0.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-intents",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-screentime",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-threadnetwork",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-installerplugins",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-pubsub",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-adservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "cloudpickle",
+      "ecosystem": "PyPI",
+      "version": "3.1.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-corehaptics",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "mss",
+      "ecosystem": "PyPI",
+      "version": "10.2.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-avkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-corespotlight",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-cloudkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "qtpy",
+      "ecosystem": "PyPI",
+      "version": "2.4.3",
+      "vulnerabilities": []
+    },
+    {
+      "package": "edge-tts",
+      "ecosystem": "PyPI",
+      "version": "7.3.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pluggy",
+      "ecosystem": "PyPI",
+      "version": "1.7.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-pushkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pywinauto",
+      "ecosystem": "PyPI",
+      "version": "0.6.9",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coretext",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "mouseinfo",
+      "ecosystem": "PyPI",
+      "version": "0.1.3",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-osakit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-gamecontroller",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "standard-chunk",
+      "ecosystem": "PyPI",
+      "version": "3.13.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "fsspec",
+      "ecosystem": "PyPI",
+      "version": "2026.9.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyaudio",
+      "ecosystem": "PyPI",
+      "version": "0.2.14",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-netfs",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-vision",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-cocoa",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pillow",
+      "ecosystem": "PyPI",
+      "version": "13.0.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-localauthenticationembeddedui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "speechrecognition",
+      "ecosystem": "PyPI",
+      "version": "3.17.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-systemconfiguration",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pypiwin32",
+      "ecosystem": "PyPI",
+      "version": "223",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pytest",
+      "ecosystem": "PyPI",
+      "version": "9.2.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-pencilkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-inputmethodkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-mediaextension",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pytweening",
+      "ecosystem": "PyPI",
+      "version": "1.2.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "httpx2",
+      "ecosystem": "PyPI",
+      "version": "2.16.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "tflite-runtime",
+      "ecosystem": "PyPI",
+      "version": "2.14.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-libdispatch",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-launchservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pymsgbox",
+      "ecosystem": "PyPI",
+      "version": "2.0.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "aiohappyeyeballs",
+      "ecosystem": "PyPI",
+      "version": "2.7.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-fskit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-security",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-syncservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-automator",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "scipy",
+      "ecosystem": "PyPI",
+      "version": "1.18.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-diskarbitration",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-screencapturekit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-modelio",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-opendirectory",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-oslog",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "flatbuffers",
+      "ecosystem": "PyPI",
+      "version": "25.12.19",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-colorsync",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "httpx2-jsfetch",
+      "ecosystem": "PyPI",
+      "version": "1.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-iobluetoothui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coremotion",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "numpy",
+      "ecosystem": "PyPI",
+      "version": "2.5.4",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-findersync",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-sensitivecontentanalysis",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coremediaio",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "anyio",
+      "ecosystem": "PyPI",
+      "version": "4.15.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "python3-xlib",
+      "ecosystem": "PyPI",
+      "version": "0.15",
+      "vulnerabilities": []
+    },
+    {
+      "package": "multidict",
+      "ecosystem": "PyPI",
+      "version": "7.2.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pycaw",
+      "ecosystem": "PyPI",
+      "version": "20260927",
+      "vulnerabilities": []
+    },
+    {
+      "package": "rich",
+      "ecosystem": "PyPI",
+      "version": "15.0.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "certifi",
+      "ecosystem": "PyPI",
+      "version": "2026.10.23",
+      "vulnerabilities": []
+    },
+    {
+      "package": "six",
+      "ecosystem": "PyPI",
+      "version": "1.17.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-classkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coreml",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-automaticassessmentconfiguration",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-executionpolicy",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-arkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-securityinterface",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-safetykit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "openwakeword",
+      "ecosystem": "PyPI",
+      "version": "0.6.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "joblib",
+      "ecosystem": "PyPI",
+      "version": "1.6.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-discrecording",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-cfnetwork",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-systemextensions",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-metal",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-gamecenter",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "rubicon-objc",
+      "ecosystem": "PyPI",
+      "version": "0.5.7",
+      "vulnerabilities": []
+    },
+    {
+      "package": "audioop-lts",
+      "ecosystem": "PyPI",
+      "version": "0.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-avfoundation",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-social",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-adsupport",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-sharedwithyoucore",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-mailkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "typing-extensions",
+      "ecosystem": "PyPI",
+      "version": "4.16.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-applescriptkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-fsevents",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "sounddevice",
+      "ecosystem": "PyPI",
+      "version": "0.5.6",
+      "vulnerabilities": []
+    },
+    {
+      "package": "mdurl",
+      "ecosystem": "PyPI",
+      "version": "0.1.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "standard-aifc",
+      "ecosystem": "PyPI",
+      "version": "3.13.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-cryptotokenkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "faster-whisper",
+      "ecosystem": "PyPI",
+      "version": "1.2.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-metalkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-metalfx",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-calendarstore",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-videosubscriberaccount",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-networkextension",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-avrouting",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coreservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-dvdplayback",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-exceptionhandling",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-kernelmanagement",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-dictionaryservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-symbols",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "narwhals",
+      "ecosystem": "PyPI",
+      "version": "2.28.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "truststore",
+      "ecosystem": "PyPI",
+      "version": "0.10.5",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-gamekit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-applicationservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-medialibrary",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-notificationcenter",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-metrickit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-multipeerconnectivity",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "screen-brightness-control",
+      "ecosystem": "PyPI",
+      "version": "0.27.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-uniformtypeidentifiers",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "charset-normalizer",
+      "ecosystem": "PyPI",
+      "version": "3.5.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-network",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "wmi",
+      "ecosystem": "PyPI",
+      "version": "1.5.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "ctranslate2",
+      "ecosystem": "PyPI",
+      "version": "4.8.4",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-sharedwithyou",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-datadetection",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "send2trash",
+      "ecosystem": "PyPI",
+      "version": "2.1.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-iobluetooth",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "clr-loader",
+      "ecosystem": "PyPI",
+      "version": "0.3.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-searchkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-linkpresentation",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "treatman",
+      "ecosystem": "PyPI",
+      "version": "0.1.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "protobuf",
+      "ecosystem": "PyPI",
+      "version": "7.36.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyrect",
+      "ecosystem": "PyPI",
+      "version": "0.2.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "bottle",
+      "ecosystem": "PyPI",
+      "version": "0.13.4",
+      "vulnerabilities": []
+    },
+    {
+      "package": "httpcore2",
+      "ecosystem": "PyPI",
+      "version": "2.16.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-addressbook",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "onnxruntime",
+      "ecosystem": "PyPI",
+      "version": "1.31.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coreaudio",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pygments",
+      "ecosystem": "PyPI",
+      "version": "2.21.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-passkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-fileprovider",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-discrecordingui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-devicediscoveryextension",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-externalaccessory",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coreaudiokit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-contactsui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "av",
+      "ecosystem": "PyPI",
+      "version": "19.0.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyperclip",
+      "ecosystem": "PyPI",
+      "version": "1.11.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "h11",
+      "ecosystem": "PyPI",
+      "version": "0.16.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-apptrackingtransparency",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-phase",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "requests",
+      "ecosystem": "PyPI",
+      "version": "2.34.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-callkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-soundanalysis",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "cffi",
+      "ecosystem": "PyPI",
+      "version": "2.1.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-preferencepanes",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "iniconfig",
+      "ecosystem": "PyPI",
+      "version": "2.3.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-cinematic",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-browserenginekit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-videotoolbox",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-instantmessage",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-ituneslibrary",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "lxml",
+      "ecosystem": "PyPI",
+      "version": "6.1.3",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-webkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-corelocation",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-speech",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-mediaplayer",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "click",
+      "ecosystem": "PyPI",
+      "version": "8.5.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-mlcompute",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-imagecapturecore",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "aiosignal",
+      "ecosystem": "PyPI",
+      "version": "1.4.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pycparser",
+      "ecosystem": "PyPI",
+      "version": "3.12",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-authenticationservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "comtypes",
+      "ecosystem": "PyPI",
+      "version": "1.4.17",
+      "vulnerabilities": []
+    },
+    {
+      "package": "httpx",
+      "ecosystem": "PyPI",
+      "version": "0.28.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "frozenlist",
+      "ecosystem": "PyPI",
+      "version": "1.8.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-latentsemanticmapping",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-replaykit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-gameplaykit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-virtualization",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "packaging",
+      "ecosystem": "PyPI",
+      "version": "26.3",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-fileproviderui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "tqdm",
+      "ecosystem": "PyPI",
+      "version": "4.70.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "hf-xet",
+      "ecosystem": "PyPI",
+      "version": "1.7.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "propcache",
+      "ecosystem": "PyPI",
+      "version": "0.5.4",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pywin32",
+      "ecosystem": "PyPI",
+      "version": "312",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-securityui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-mediatoolbox",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "markdown-it-py",
+      "ecosystem": "PyPI",
+      "version": "4.2.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coredata",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "idna",
+      "ecosystem": "PyPI",
+      "version": "3.20",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coremedia",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-healthkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-mapkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "tokenizers",
+      "ecosystem": "PyPI",
+      "version": "0.23.3",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pygetwindow",
+      "ecosystem": "PyPI",
+      "version": "0.0.9",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-safariservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-scriptingbridge",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-usernotifications",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-screensaver",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pytest-asyncio",
+      "ecosystem": "PyPI",
+      "version": "1.4.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-core",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-carbon",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pywebview",
+      "ecosystem": "PyPI",
+      "version": "6.2.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-devicecheck",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "keyboard",
+      "ecosystem": "PyPI",
+      "version": "0.13.5",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-shazamkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-usernotificationsui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-extensionkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "ddgs",
+      "ecosystem": "PyPI",
+      "version": "9.16.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-libxpc",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "tabulate",
+      "ecosystem": "PyPI",
+      "version": "0.10.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "httpcore",
+      "ecosystem": "PyPI",
+      "version": "1.0.9",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-coremidi",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-compositorservices",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-scenekit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "python-xlib",
+      "ecosystem": "PyPI",
+      "version": "0.33",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyautogui",
+      "ecosystem": "PyPI",
+      "version": "0.9.54",
+      "vulnerabilities": []
+    },
+    {
+      "package": "threadpoolctl",
+      "ecosystem": "PyPI",
+      "version": "3.7.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-accessibility",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "aiohttp",
+      "ecosystem": "PyPI",
+      "version": "3.14.5",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-photos",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-storekit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-quicklookthumbnailing",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-backgroundassets",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pythonnet",
+      "ecosystem": "PyPI",
+      "version": "3.2.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "yarl",
+      "ecosystem": "PyPI",
+      "version": "1.25.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "psutil",
+      "ecosystem": "PyPI",
+      "version": "7.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-applescriptobjc",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-naturallanguage",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-collaboration",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "urllib3",
+      "ecosystem": "PyPI",
+      "version": "2.8.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-businesschat",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "filelock",
+      "ecosystem": "PyPI",
+      "version": "4.2.4",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-corebluetooth",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-gamesave",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-iosurface",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-photosui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-spritekit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-servicemanagement",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "primp",
+      "ecosystem": "PyPI",
+      "version": "2.0.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "attrs",
+      "ecosystem": "PyPI",
+      "version": "26.1.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "huggingface-hub",
+      "ecosystem": "PyPI",
+      "version": "2.4.0",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-metalperformanceshadersgraph",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "scikit-learn",
+      "ecosystem": "PyPI",
+      "version": "1.9.1",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-intentsui",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pystray",
+      "ecosystem": "PyPI",
+      "version": "0.19.5",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-securityfoundation",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-audiovideobridging",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-eventkit",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-localauthentication",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-quartz",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-mediaaccessibility",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    },
+    {
+      "package": "pyobjc-framework-accounts",
+      "ecosystem": "PyPI",
+      "version": "12.2.2",
+      "vulnerabilities": []
+    }
+  ]
+}
