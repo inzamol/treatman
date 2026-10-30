@@ -2,6 +2,8 @@
 Unit tests for StackVet Tool Integration in TreatMan
 """
 
+import shutil
+import pytest
 from tm.tools.base import registry
 import tm.tools.shell_tools  # noqa: F401
 
@@ -17,6 +19,9 @@ def test_stackvet_tool_execution():
     tool = registry.get("stackvet_health_check")
     assert tool is not None
 
+    if shutil.which("stackvet") is None:
+        pytest.skip("stackvet executable not found on system PATH")
+
     res = tool.execute()
     assert res.get("status") == "success"
     assert "health_score" in res
@@ -25,4 +30,3 @@ def test_stackvet_tool_execution():
     assert "grade" in res
     assert "vulnerabilities" in res
     assert res["vulnerabilities"] == 0
-
