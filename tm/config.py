@@ -111,11 +111,42 @@ class PathsConfig:
 
 
 @dataclass
+class VisionConfig:
+    enabled: bool = True
+    capture_active_window_only: bool = False
+    max_resolution: List[int] = field(default_factory=lambda: [1280, 720])
+    jpeg_quality: int = 80
+
+
+@dataclass
+class HotkeysConfig:
+    summon_agent: str = "ctrl+space"
+    push_to_talk: str = "win+shift+t"
+    stop_speaking: str = "escape"
+
+
+@dataclass
+class HUDConfig:
+    theme: str = "cyberpunk_dark"
+    opacity: float = 0.92
+    position: str = "bottom-right"
+
+
+@dataclass
+class InterfacesConfig:
+    default_mode: str = "cli"
+    hotkeys: HotkeysConfig = field(default_factory=HotkeysConfig)
+    hud: HUDConfig = field(default_factory=HUDConfig)
+
+
+@dataclass
 class Config:
     agent: AgentConfig = field(default_factory=AgentConfig)
     autonomy: AutonomyConfig = field(default_factory=AutonomyConfig)
     llm: LLMConfig = field(default_factory=LLMConfig)
     voice: VoiceConfig = field(default_factory=VoiceConfig)
+    vision: VisionConfig = field(default_factory=VisionConfig)
+    interfaces: InterfacesConfig = field(default_factory=InterfacesConfig)
     paths: PathsConfig = field(default_factory=PathsConfig)
 
     @classmethod
@@ -200,6 +231,34 @@ class Config:
         instance.voice.rate = tts_raw.get("rate", instance.voice.rate)
         instance.voice.pitch = tts_raw.get("pitch", instance.voice.pitch)
         instance.voice.barge_in = tts_raw.get("barge_in", instance.voice.barge_in)
+
+        # Populate Vision
+        vision_raw = raw_cfg.get("vision", {})
+        instance.vision.enabled = vision_raw.get("enabled", instance.vision.enabled)
+        instance.vision.capture_active_window_only = vision_raw.get(
+            "capture_active_window_only", instance.vision.capture_active_window_only
+        )
+        if "max_resolution" in vision_raw and isinstance(vision_raw["max_resolution"], list):
+            instance.vision.max_resolution = vision_raw["max_resolution"]
+        instance.vision.jpeg_quality = int(vision_raw.get("jpeg_quality", instance.vision.jpeg_quality))
+
+        # Populate Interfaces
+        ifaces_raw = raw_cfg.get("interfaces", {})
+        instance.interfaces.default_mode = ifaces_raw.get("default_mode", instance.interfaces.default_mode)
+        hk_raw = ifaces_raw.get("hotkeys", {})
+        instance.interfaces.hotkeys.summon_agent = hk_raw.get(
+            "summon_agent", instance.interfaces.hotkeys.summon_agent
+        )
+        instance.interfaces.hotkeys.push_to_talk = hk_raw.get(
+            "push_to_talk", instance.interfaces.hotkeys.push_to_talk
+        )
+        instance.interfaces.hotkeys.stop_speaking = hk_raw.get(
+            "stop_speaking", instance.interfaces.hotkeys.stop_speaking
+        )
+        hud_raw = ifaces_raw.get("hud", {})
+        instance.interfaces.hud.theme = hud_raw.get("theme", instance.interfaces.hud.theme)
+        instance.interfaces.hud.opacity = float(hud_raw.get("opacity", instance.interfaces.hud.opacity))
+        instance.interfaces.hud.position = hud_raw.get("position", instance.interfaces.hud.position)
 
         # Populate Paths
         paths_raw = raw_cfg.get("paths", {})

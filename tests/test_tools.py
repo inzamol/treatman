@@ -59,3 +59,23 @@ def test_memory_and_audit():
         assert len(logs) == 1
         assert logs[0]["tool_name"] == "test_tool"
 
+
+def test_volume_and_mute_tools():
+    set_vol = registry.get("set_volume")
+    assert set_vol is not None
+    res_vol = set_vol.execute(level=50)
+    assert res_vol["status"] == "success"
+
+    mute_tool = registry.get("mute_audio")
+    assert mute_tool is not None
+    res_mute = mute_tool.execute(mute=False)
+    assert res_mute["status"] == "success"
+
+
+def test_launch_app_invalid_does_not_hang():
+    launch = registry.get("launch_app")
+    assert launch is not None
+    res = launch.execute(app_name="definitely_nonexistent_application_xyz987")
+    assert res["status"] == "error"
+
+

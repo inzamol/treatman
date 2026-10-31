@@ -23,6 +23,7 @@ class Speaker:
         self.rate = self.config.voice.rate
         self.pitch = self.config.voice.pitch
         self._current_process: Optional[subprocess.Popen] = None
+        self._temp_files: list = []
 
     def stop(self) -> None:
         """Instant barge-in cancellation: kills ongoing speech playback immediately."""
@@ -32,6 +33,13 @@ class Speaker:
             except Exception:
                 pass
             self._current_process = None
+        for f in list(self._temp_files):
+            try:
+                if os.path.exists(f):
+                    os.unlink(f)
+                self._temp_files.remove(f)
+            except Exception:
+                pass
 
     async def _generate_audio_file(self, text: str, output_path: str) -> bool:
         if edge_tts is not None:
@@ -74,16 +82,22 @@ class Speaker:
                 return
 
             # Play MP3 asynchronously via Windows MediaPlayer PowerShell script
-            norm_path = tmp_path.replace("\\", "\\\\")
+            clean_path = tmp_path.replace("'", "''")
             ps_script = f"""
             Add-Type -AssemblyName presentationCore
             $player = New-Object System.Windows.Media.MediaPlayer
-            $player.Open('{norm_path}')
+            $player.Open('{clean_path}')
             $player.Play()
             Start-Sleep -Milliseconds 300
-            while ($player.NaturalDuration.HasTimeSpan -eq $false) {{ Start-Sleep -Milliseconds 100 }}
-            $dur = $player.NaturalDuration.TimeSpan.TotalSeconds
-            Start-Sleep -Seconds ($dur + 0.3)
+            $i = 0
+            while (($player.NaturalDuration.HasTimeSpan -eq $false) -and ($i -lt 30)) {{ 
+                Start-Sleep -Milliseconds 100
+                $i++
+            }}
+            if ($player.NaturalDuration.HasTimeSpan) {{
+                $dur = $player.NaturalDuration.TimeSpan.TotalSeconds
+                Start-Sleep -Seconds ($dur + 0.3)
+            }}
             $player.Close()
             """
             self._current_process = subprocess.Popen(
@@ -91,9 +105,16 @@ class Speaker:
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
             )
+            self._temp_files.append(tmp_path)
 
             if not interruptable:
                 self._current_process.wait()
+                try:
+                    os.unlink(tmp_path)
+                    if tmp_path in self._temp_files:
+                        self._temp_files.remove(tmp_path)
+                except Exception:
+                    pass
 
         except Exception as e:
             self._speak_sapi5(text)

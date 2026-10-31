@@ -53,3 +53,26 @@ def test_permission_matrix_levels():
     assert allowed
     assert confirm
 
+
+def test_agent_cancels_when_confirmation_callback_missing(tmp_path):
+    from tm.core.agent import TMAgent
+    cfg = Config()
+    cfg.autonomy.level = "strict"
+    cfg.paths.data_dir = tmp_path
+    agent = TMAgent(cfg)
+
+    # First turn calls tool; second turn sees cancellation and produces final answer
+    responses = [
+        ("Let me set the volume.", [{"id": "call_123", "name": "set_volume", "arguments": {"level": 50}}], "test-model"),
+        ("I cannot adjust the volume without authorization, Sir.", None, "test-model"),
+    ]
+    agent.router.generate_chat_completion = lambda messages, tools: responses.pop(0)
+
+    res = agent.execute_turn("Set volume to 50", confirmation_callback=None)
+    actions = res.get("actions", [])
+    assert len(actions) == 1
+    assert actions[0]["status"] == "cancelled"
+    assert "confirmation required" in actions[0]["reason"].lower()
+    assert "cannot adjust" in res.get("response")
+
+

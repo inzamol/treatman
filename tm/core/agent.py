@@ -121,18 +121,21 @@ class TMAgent:
 
                 # Confirmation check
                 if req_confirm:
-                    approved = True
                     if confirmation_callback:
                         approved = confirmation_callback(t_name, t_args, reason)
+                    else:
+                        approved = False
+                        reason = f"Confirmation required for '{t_name}', but no interactive confirmation callback was provided."
+
                     if not approved:
-                        obs_content = "Action cancelled: User denied permission."
+                        obs_content = reason if not confirmation_callback else "Action cancelled: User denied permission."
                         self.conversation_history.append({
                             "role": "tool",
                             "tool_call_id": t_id,
                             "name": t_name,
                             "content": json.dumps({"status": "cancelled", "message": obs_content}),
                         })
-                        actions_taken.append({"tool": t_name, "args": t_args, "status": "cancelled"})
+                        actions_taken.append({"tool": t_name, "args": t_args, "status": "cancelled", "reason": reason})
                         continue
 
                 # Execute tool
@@ -144,7 +147,12 @@ class TMAgent:
                     res = tool_obj.execute(**t_args)
                     duration_ms = int((time.time() - start_time) * 1000)
                     res_str = json.dumps(res, default=str)
-                    status_str = "success"
+                    if isinstance(res, dict) and res.get("status") in ["error", "blocked", "cancelled"]:
+                        status_str = res["status"]
+                    elif isinstance(res, dict) and res.get("exit_code", 0) != 0:
+                        status_str = "error"
+                    else:
+                        status_str = "success"
                 except Exception as e:
                     duration_ms = int((time.time() - start_time) * 1000)
                     res = {"status": "error", "message": str(e)}

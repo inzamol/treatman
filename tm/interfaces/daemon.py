@@ -82,9 +82,11 @@ class TMDaemon:
 
         # 1. Register global hotkey
         if keyboard is not None:
-            hotkey = self.config.interfaces.hotkeys.summon_agent if hasattr(self.config.interfaces, "hotkeys") else "ctrl+space"
-            keyboard.add_hotkey("ctrl+space", self.on_hotkey_triggered)
-            print(f"[Hotkey Registered] 'Ctrl + Space' is active.")
+            interfaces_cfg = getattr(self.config, "interfaces", None)
+            hotkey_cfg = getattr(interfaces_cfg, "hotkeys", None) if interfaces_cfg else None
+            hotkey = getattr(hotkey_cfg, "summon_agent", "ctrl+space") if hotkey_cfg else "ctrl+space"
+            keyboard.add_hotkey(hotkey, self.on_hotkey_triggered)
+            print(f"[Hotkey Registered] '{hotkey}' is active.")
         else:
             print("[Warning] 'keyboard' library not available for global hotkeys.")
 

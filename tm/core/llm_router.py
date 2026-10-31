@@ -28,7 +28,8 @@ class LLMRouter:
         if self.provider == "omniroute":
             return f"omniroute/{self.config.llm.omniroute_model}"
         elif self.provider == "auto":
-            return f"auto (omniroute -> {self.free_models[0]})"
+            first_model = self.free_models[0] if self.free_models else "none"
+            return f"auto (omniroute -> {first_model})"
         
         now = time.time()
         for i, model in enumerate(self.free_models):
@@ -36,7 +37,7 @@ class LLMRouter:
             if now > cd:
                 self.current_model_index = i
                 return model
-        return self.free_models[0]
+        return self.free_models[0] if self.free_models else "none"
 
     def mark_model_cooldown(self, model: str, duration_seconds: float = 60.0) -> None:
         """Temporarily puts a rate-limited model on cooldown."""
@@ -237,7 +238,11 @@ class LLMRouter:
                 if resp.status_code != 200:
                     try:
                         err_json = resp.json()
-                        err_msg = err_json.get("error", {}).get("message") or resp.text
+                        err_val = err_json.get("error", {})
+                        if isinstance(err_val, dict):
+                            err_msg = err_val.get("message") or resp.text
+                        else:
+                            err_msg = str(err_val) or resp.text
                     except Exception:
                         err_msg = resp.text
                     raise RuntimeError(f"HTTP {resp.status_code}: {err_msg}")
@@ -257,7 +262,11 @@ class LLMRouter:
                 err_body = e.read().decode("utf-8", errors="ignore")
                 try:
                     err_json = json.loads(err_body)
-                    err_msg = err_json.get("error", {}).get("message") or err_body
+                    err_val = err_json.get("error", {})
+                    if isinstance(err_val, dict):
+                        err_msg = err_val.get("message") or err_body
+                    else:
+                        err_msg = str(err_val) or err_body
                 except Exception:
                     err_msg = err_body
                 raise RuntimeError(f"HTTP {e.code}: {err_msg}")
@@ -304,14 +313,38 @@ class LLMRouter:
         if tools:
             payload["tools"] = tools
 
+        def _normalize_ollama_msg(msg_data: Dict[str, Any]) -> Tuple[Optional[str], Optional[List[Dict[str, Any]]], str]:
+            content = msg_data.get("content")
+            raw_tc = msg_data.get("tool_calls")
+            tool_calls = None
+            if raw_tc:
+                tool_calls = []
+                for tc in raw_tc:
+                    fn = tc.get("function", {})
+                    raw_args = fn.get("arguments", {})
+                    if isinstance(raw_args, str):
+                        try:
+                            parsed_args = json.loads(raw_args)
+                        except Exception:
+                            parsed_args = {}
+                    else:
+                        parsed_args = raw_args or {}
+                    tool_calls.append({
+                        "id": tc.get("id", f"call_ollama_{int(time.time()*1000)}"),
+                        "name": fn.get("name"),
+                        "arguments": parsed_args,
+                    })
+            return content, tool_calls, f"ollama/{self.config.llm.ollama_model}"
+
         try:
             if httpx is not None:
                 with httpx.Client(timeout=10.0) as client:
                     resp = client.post(endpoint, json=payload)
                     if resp.status_code == 200:
                         data = resp.json()
-                        msg = data.get("message", {})
-                        return msg.get("content"), msg.get("tool_calls"), f"ollama/{self.config.llm.ollama_model}"
+                        return _normalize_ollama_msg(data.get("message", {}))
+                    else:
+                        return f"Ollama HTTP {resp.status_code}: {resp.text}", None, "ollama_error"
             else:
                 import urllib.request
                 req = urllib.request.Request(
@@ -322,8 +355,7 @@ class LLMRouter:
                 )
                 with urllib.request.urlopen(req, timeout=10) as response:
                     data = json.loads(response.read().decode("utf-8"))
-                    msg = data.get("message", {})
-                    return msg.get("content"), msg.get("tool_calls"), f"ollama/{self.config.llm.ollama_model}"
+                    return _normalize_ollama_msg(data.get("message", {}))
         except Exception as e:
             return f"Ollama local fallback error: {e}", None, "ollama_error"
 

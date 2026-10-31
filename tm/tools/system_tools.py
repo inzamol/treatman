@@ -71,9 +71,8 @@ def launch_app(app_name: str) -> Dict[str, Any]:
         if res.returncode == 0:
             return {"status": "success", "message": f"Launched '{app_name}' successfully."}
         else:
-            # Fallback to direct shell start
-            os.system(f'start "" "{target}"')
-            return {"status": "success", "message": f"Invoked launch command for '{app_name}'."}
+            err_msg = res.stderr.strip() or f"Application '{app_name}' could not be started."
+            return {"status": "error", "message": err_msg}
     except Exception as e:
         return {"status": "error", "message": f"Failed to launch '{app_name}': {e}"}
 
@@ -101,6 +100,8 @@ def launch_app(app_name: str) -> Dict[str, Any]:
 def close_app(app_name: str, force: bool = False) -> Dict[str, Any]:
     norm_name = app_name.lower().strip()
     target_alias = APP_ALIASES.get(norm_name, norm_name).replace(".exe", "")
+    if target_alias.startswith("ms-settings"):
+        target_alias = "SystemSettings"
 
     closed_count = 0
     if psutil is not None:
@@ -233,6 +234,7 @@ def set_volume(level: int) -> Dict[str, Any]:
     }}
     [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMMDeviceEnumerator {{
+        int EnumAudioEndpoints(int dataFlow, int stateMask, out object devices);
         int GetDefaultAudioEndpoint(int dataFlow, int role, out IMMDevice endpoint);
     }}
     [ComImport, Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")] public class MMDeviceEnumeratorComObject {{ }}
@@ -289,6 +291,55 @@ def mute_audio(mute: bool) -> Dict[str, Any]:
         volume = ctypes.cast(interface, ctypes.POINTER(IAudioEndpointVolume))
         volume.SetMute(1 if mute else 0, None)
         return {"status": "success", "is_muted": mute}
+    except Exception:
+        pass
+
+    # Fallback via PowerShell CoreAudio COM interface
+    ps_mute = f"""
+    Add-Type -TypeDefinition @'
+    using System.Runtime.InteropServices;
+    [Guid("5CDF2C82-841E-4546-9722-0CF74078229A"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IAudioEndpointVolume {{
+        int f(); int g(); int h(); int i();
+        int SetMasterVolumeLevelScalar(float fLevel, System.Guid pguidEventContext);
+        int j();
+        int GetMasterVolumeLevelScalar(out float pfLevel);
+        int k(); int l(); int m(); int n();
+        int SetMute([MarshalAs(UnmanagedType.Bool)] bool bMute, System.Guid pguidEventContext);
+    }}
+    [Guid("D666063F-1587-4E43-81F1-B948E807363F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IMMDevice {{
+        int Activate(ref System.Guid id, int clsCtx, int activationParams, out IAudioEndpointVolume aev);
+    }}
+    [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IMMDeviceEnumerator {{
+        int EnumAudioEndpoints(int dataFlow, int stateMask, out object devices);
+        int GetDefaultAudioEndpoint(int dataFlow, int role, out IMMDevice endpoint);
+    }}
+    [ComImport, Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")] public class MMDeviceEnumeratorComObject {{ }}
+    public class AudioMute {{
+        public static void SetMute(bool mute) {{
+            var enumerator = new MMDeviceEnumeratorComObject() as IMMDeviceEnumerator;
+            IMMDevice dev = null;
+            enumerator.GetDefaultAudioEndpoint(0, 1, out dev);
+            var iid = typeof(IAudioEndpointVolume).GUID;
+            IAudioEndpointVolume aev = null;
+            dev.Activate(ref iid, 23, 0, out aev);
+            aev.SetMute(mute, System.Guid.Empty);
+        }}
+    }}
+'@
+    [AudioMute]::SetMute(${'true' if mute else 'false'})
+    """
+    try:
+        res = subprocess.run(
+            ["powershell", "-NoProfile", "-Command", ps_mute],
+            capture_output=True,
+            text=True,
+            timeout=8,
+        )
+        if res.returncode == 0:
+            return {"status": "success", "is_muted": mute}
     except Exception:
         pass
 

@@ -4,6 +4,7 @@ TM Filesystem Tools (Search, Organize, Read, Write, Recycle)
 
 import os
 import shutil
+import subprocess
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from tm.tools.base import tool
@@ -119,8 +120,11 @@ def organize_directory(directory_path: str) -> Dict[str, Any]:
                 if dest_file.exists():
                     dest_file = cat_folder / f"{item.stem}_{int(os.path.getmtime(item))}{item.suffix}"
 
-                shutil.move(str(item), str(dest_file))
-                moved_summary[destination_category] = moved_summary.get(destination_category, 0) + 1
+                try:
+                    shutil.move(str(item), str(dest_file))
+                    moved_summary[destination_category] = moved_summary.get(destination_category, 0) + 1
+                except Exception:
+                    pass
 
         total_moved = sum(moved_summary.values())
         return {
@@ -226,9 +230,11 @@ def safe_delete_to_recycle_bin(path: str) -> Dict[str, Any]:
             return {"status": "error", "message": f"Send2Trash error: {e}"}
 
     # Fallback to PowerShell Recycle Bin call
+    method = "DeleteDirectory" if target.is_dir() else "DeleteFile"
+    clean_target = str(target).replace("'", "''")
     ps_cmd = f"""
     Add-Type -AssemblyName Microsoft.VisualBasic
-    [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile('{target}', 'OnlyErrorDialogs', 'SendToRecycleBin')
+    [Microsoft.VisualBasic.FileIO.FileSystem]::{method}('{clean_target}', 'OnlyErrorDialogs', 'SendToRecycleBin')
     """
     try:
         res = subprocess.run(["powershell", "-NoProfile", "-Command", ps_cmd], timeout=10)

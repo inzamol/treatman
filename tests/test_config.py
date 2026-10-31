@@ -15,6 +15,10 @@ def test_default_config_structure():
     assert cfg.llm.provider in ["auto", "omniroute", "openrouter", "ollama"]
     assert cfg.voice.enabled is True
     assert cfg.paths.recycle_bin_safety is True
+    assert cfg.interfaces.default_mode == "cli"
+    assert cfg.interfaces.hotkeys.summon_agent == "ctrl+space"
+    assert cfg.vision.enabled is True
+    assert cfg.vision.max_resolution == [1280, 720]
 
 
 def test_env_loader():

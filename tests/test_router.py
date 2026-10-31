@@ -32,3 +32,8 @@ def test_router_provider_modes():
     router = LLMRouter(cfg)
     assert router.get_active_model() in cfg.llm.free_models
 
+    # Empty free models resilience
+    cfg.llm.free_models = []
+    router_empty = LLMRouter(cfg)
+    assert router_empty.get_active_model() == "none"
+

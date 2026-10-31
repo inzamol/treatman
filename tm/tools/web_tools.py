@@ -4,6 +4,7 @@ TM Web & Research Tools (DuckDuckGo Live Search & Scraper)
 
 import re
 import urllib.request
+import urllib.parse
 from typing import Dict, Any, List
 from tm.tools.base import tool
 
