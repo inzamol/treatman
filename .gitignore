@@ -1,35 +1,94 @@
+# ==============================================================================
+# TreatMan (.gitignore)
+# Universal Git ignore rules for Python, Windows, Tox, and TreatMan runtime
+# ==============================================================================
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+*.pyd
 
-# Virtual environments
+# Distribution / Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+treatman.egg-info/
+
+# Virtual Environments
 .venv/
 venv/
 ENV/
 env/
+env.bak/
+venv.bak/
 
-# Tox
-.tox/
-
-# Pytest / Coverage
-.pytest_cache/
-.coverage
-htmlcov/
-
-# TreatMan Local Data & Secrets
+# Environment Variables & Secrets
 .env
+.env.*
+!.env.example
+
+# TreatMan Local Runtime Data, Memory, and Logs
 .treatman/
 *.db
+*.db-journal
+*.db-wal
+*.sqlite
+*.sqlite3
 *.log
+logs/
 
-# Build / Distribution
-dist/
-build/
-*.egg-info/
+# Testing & Coverage (Pytest, Tox, Coverage)
+.tox/
+.nox/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+coverage.xml
+nosetests.xml
 
-# StackVet scan caches and temporary reports
+# StackVet Caches & Generated Reports
+.stackvet/
 .stackvet-cache/
+.stackvet-rollback.json
 stackvet.sarif
 stackvet-report.html
+report.html
 
+# IDEs & Developer Tools
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Operating System Files (Windows, macOS, Linux)
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes

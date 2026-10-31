@@ -1,4 +1,6 @@
-.env
-.venv
-.stackvet/*
-*.pyc
+# Bytecode and compiled files inside package
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
